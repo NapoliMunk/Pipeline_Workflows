@@ -1,5 +1,5 @@
 version: 2.1
-
+#on: push ("THis is a an workflow file. To the left is an event specifing to trigger(run) this workflow when someone pushes new code")
 workflows:
   test-deploy:
     jobs:
@@ -10,4 +10,9 @@ jobs:
       - image: cimg/python:3.11.0
     steps:
       - checkout
-      - run: python --version
+      - run:
+          name: Install dependencies
+          command: pip install geoviews, pip install pandas, pip install scipy, pip install plotly
+      - run:
+          name: Run Tests
+          command: npm run test
