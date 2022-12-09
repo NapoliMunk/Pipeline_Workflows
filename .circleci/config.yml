@@ -12,7 +12,7 @@ jobs:
       - checkout
       - run:
           name: Install dependencies
-          command: pip install geoviews, pip install pandas, pip install scipy, pip install plotly
+          command: pip install pyviz geoviews, pip install pandas, pip install scipy, pip install plotly
       - run:
           name: Run Tests
           command: npm run test
